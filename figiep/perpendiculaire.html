@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Droites perpendiculaires</title>	  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../assets/js/iepjsmin.js"></script>
+	<script type="text/javascript" src="../librairies/MathJax/MathJax.js?config=TeX-AMS-MML_SVG-full.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		extensions: ['tex2jax.js','MatchWebFonts.js'],
+        tex2jax: {
+          inlineMath: [["$","$"],["\\(","\\)"]]
+        },
+		SVG: {    
+			font: "STIX-Web"
+		  },
+        jax: ["input/TeX","output/SVG"],
+        TeX: {extensions: ["color.js"],
+				Augment: {
+				  Definitions: {
+					macros: {
+					  overparen: ['UnderOver','23DC'], // UnderOver represents the MathML element, 23DC the unicode character
+					  underparen: ['UnderOver','23DD'] // UnderOver represents the MathML element, 23DC the unicode character
+					}
+				  }
+				}  				
+			},			
+        messageStyle:'none'
+      })
+    </script>
+    
+  <style type="text/css">
+    html, body, div {margin:0; padding: 0; background: rgba(0,0,0,.8);}
+	.svg-container {
+		--largeur:780 ;
+		--hauteur:510 ;		
+		position: relative;		
+		padding-bottom: calc( 100% * var(--hauteur) / var(--largeur) ); 
+		vertical-align: middle;
+		overflow: hidden;
+		background: #f9f6f6;
+		margin: 0px auto;
+	}	
+	@media all and (min-aspect-ratio: 780/510)  {
+		.svg-container {
+			width: calc( 100vh * 780 / 510 );
+		}
+	}
+	@media all and (max-aspect-ratio: 780/510)  {
+		.svg-container {
+			width: 100vw;
+		}
+	}
+	.svg-content {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;	
+	}
+	#retour {
+		position:absolute;
+		z-index:9999;
+		top: 1vmin;
+		right: 2vmin;
+		font-size: 2vmin;
+		background: none;
+		font-family: 'Lato', sans-serif;
+	}
+	#retour a {
+		text-decoration: none;
+		color: black;
+	}
+	#retour a:visited {  		
+	}
+	#retour a:hover {  
+		color: #FF0066;  
+	}	
+  </style>
+</head>
+<body>
+  <div id="errors"></div>
+  
+  <div class="svg-container">
+	<div id="retour"><a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" height="2vmin" style="vertical-align: -0.125em;">
+			<path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/>
+		</svg> Constructions animées</a></div>  
+	<svg id="svgiep" preserveAspectRatio="xMinYMin meet" class="svg-content"  viewBox="0 0 780 510" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+  
+
+  <script id="figurexml" type="text/xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<INSTRUMENPOCHE version="2">
+
+
+<!-- Régis Deleuze (rdeleuze@ac-reims.fr) -->
+
+
+
+<action abscisse="600" ordonnee="50" id="50" mouvement="creer" objet="texte" />
+<action texte="$\textbf{Construire une droite perpendiculaire à une droite donnée}$" id="50" taille="19" couleur="noir" mouvement="ecrire" objet="texte" police="arial" />
+<action mouvement="translation" objet="texte" id="50" abscisse="50" ordonnee="50" />
+<action abscisse="50" ordonnee="75" id="51" mouvement="creer" objet="texte" />
+<action texte="$\text{Il s'agit de construire la droite }(d')\text{ perpendiculaire à la droite }(d)\text{ et passant par le point }A$" id="51" taille="16" couleur="rouge" mouvement="ecrire" objet="texte" />
+
+
+
+<action epaisseur="1" couleur="darkblue" ordonnee2="460" abscisse2="590" ordonnee1="230" abscisse1="40" id="23" mouvement="tracer" objet="trait" />
+<action abscisse="595" ordonnee="440" id="31" mouvement="creer" objet="texte" />
+<action texte="$(d)$" id="31" taille="24" couleur="darkblue" mouvement="ecrire" objet="texte" />
+<action abscisse="280" ordonnee="190" id="12" mouvement="creer" objet="point" />
+<action ordonnee="-21.9" abscisse="15.5" couleur="0" nom="A" id="12" mouvement="nommer" objet="point" tempo="40" />
+
+
+
+<action abscisse="380" ordonnee="140" id="33" mouvement="creer" objet="texte" />
+<action texte="$\text{On place un des côtés de l'angle droit de l'équerre sur la droite }(d)$" id="33" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action abscisse="360" ordonnee="295" mouvement="montrer" objet="equerre" />
+<action abscisse="478.386" ordonnee="413.325" mouvement="translation" objet="equerre" tempo="10" />
+<action sens="5" angle="22.693" mouvement="rotation" objet="equerre" tempo="30" />
+<action texte="$\text{On place un des côtés de l'angle droit de l'équerre sur la droite }(d)$" id="33" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+
+
+
+<action abscisse="380" ordonnee="160" id="34" mouvement="creer" objet="texte" />
+<action texte="$\text{Puis on fait glisser l'équerre sur la droite }(d)\text{ jusqu'au point }A$" id="34" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action abscisse="230.039" ordonnee="309.471" mouvement="translation" objet="equerre" tempo="30" />
+<action texte="$\text{Puis on fait glisser l'équerre sur la droite }(d)\text{ jusqu'au point }A$" id="34" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+
+
+<action mouvement="masquer" objet="regle" />
+<action sens="360" angle="112.693" mouvement="rotation" objet="regle" />
+
+
+<action abscisse="380" ordonnee="180" id="35" mouvement="creer" objet="texte" />
+<action texte="$\text{On place alors la règle contre l'autre côté de l'équerre}$" id="35" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action mouvement="vide" objet="regle" />
+<action abscisse="105" ordonnee="180" mouvement="montrer" objet="regle" />
+<action abscisse="318.557" ordonnee="97.798" mouvement="translation" objet="regle" tempo="30" />
+<action mouvement="masquer" objet="equerre" />
+<action texte="$\text{On place alors la règle contre l'autre côté de l'équerre}$" id="35" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+
+
+
+<action abscisse="380" ordonnee="200" id="36" mouvement="creer" objet="texte" />
+<action texte="$\text{On trace la droite }(d')$" id="36" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action sens="180" angle="-20" mouvement="rotation" objet="crayon" />
+<action abscisse="370" ordonnee="250" mouvement="montrer" objet="crayon" />
+<action abscisse="315.354" ordonnee="105.455" mouvement="translation" objet="crayon" tempo="10" />
+<action couleur="firebrick" abscisse="176.917" ordonnee="436.502" epaisseur="1" id="13" mouvement="tracer" objet="crayon" />
+<action mouvement="masquer" objet="crayon" />
+<action mouvement="masquer" objet="regle" />
+<action abscisse="146" ordonnee="400" id="38" mouvement="creer" objet="texte" />
+<action texte="$(d')$" id="38" taille="24" couleur="firebrick" mouvement="ecrire" objet="texte" />
+<action texte="$\text{On trace la droite }(d')$" id="36" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+
+
+
+<action abscisse="380" ordonnee="225" id="37" mouvement="creer" objet="texte" />
+<action texte="$\text{Et on code l'angle droit sur la figure}$" id="37" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action ordonnee_inter="309.471" abscisse_inter="230.039" ordonnee_sommet="298.735" abscisse_sommet="256.207" id="14" epaisseur="1" mouvement="creer" objet="angle_droit" tempo="30" />
+<action texte="$\text{Et on code l'angle droit sur la figure}$" id="37" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+</INSTRUMENPOCHE>
+  </script>
+
+  <script type="text/javascript">
+    /**
+     * Affiche une erreur dans la page
+     * @param {Error|string} error
+     */
+    function displayError(error) {
+      console.error(error)
+      var pre = document.createElement('pre')
+      var txt = document.createTextNode(error.toString())
+      pre.appendChild(txt)
+      document.getElementById('errors').appendChild(pre)
+    }
+
+    try {
+      var xml = document.getElementById('figurexml').innerHTML
+	  
+	  
+        
+            var svg = document.getElementById("svgiep");			          
+            var iepapp = new iep.iepApp();			
+            iepapp.addDoc(svg,xml,false);
+
+    } catch (error) {
+      displayError("Le lecteur a échoué à lire le script fourni")
+      console.error(error)
+    }
+	
+	
+	function iniFrame() { 
+		if ( window.location !== window.parent.location ) 
+		{ 
+		  
+			// The page is in an iFrames 
+			document.getElementById('retour').style.visibility = 'hidden';
+		}  
+		else { 
+		} 
+	} 
+	  
+	// Calling iniFrame function 
+	iniFrame(); 
+	
+  </script>
+</body>
+</html>

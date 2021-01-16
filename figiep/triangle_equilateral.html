@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Construire un triangle équilatéral</title>	  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../assets/js/iepjsmin.js"></script>
+	<script type="text/javascript" src="../librairies/MathJax/MathJax.js?config=TeX-AMS-MML_SVG-full.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		extensions: ['tex2jax.js','MatchWebFonts.js'],
+        tex2jax: {
+          inlineMath: [["$","$"],["\\(","\\)"]]
+        },
+		SVG: {    
+			font: "STIX-Web"
+		  },
+        jax: ["input/TeX","output/SVG"],
+        TeX: {extensions: ["color.js"],
+				Augment: {
+				  Definitions: {
+					macros: {
+					  overparen: ['UnderOver','23DC'], // UnderOver represents the MathML element, 23DC the unicode character
+					  underparen: ['UnderOver','23DD'] // UnderOver represents the MathML element, 23DC the unicode character
+					}
+				  }
+				}  				
+			},			
+        messageStyle:'none'
+      })
+    </script>
+    
+  <style type="text/css">
+    html, body, div {margin:0; padding: 0; background: rgba(0,0,0,.8);}
+	.svg-container {
+		--largeur:710 ;
+		--hauteur:440 ;		
+		position: relative;		
+		padding-bottom: calc( 100% * var(--hauteur) / var(--largeur) ); 
+		vertical-align: middle;
+		overflow: hidden;
+		background: #f9f6f6;
+		margin: 0px auto;
+	}	
+	@media all and (min-aspect-ratio: 710/440)  {
+		.svg-container {
+			width: calc( 100vh * 710 / 440 );
+		}
+	}
+	@media all and (max-aspect-ratio: 710/440)  {
+		.svg-container {
+			width: 100vw;
+		}
+	}
+	.svg-content {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;	
+	}	
+	#retour {
+		position:absolute;
+		z-index:9999;
+		top: 1vmin;
+		right: 2vmin;
+		font-size: 2vmin;
+		background: none;
+		font-family: 'Lato', sans-serif;
+	}
+	#retour a {
+		text-decoration: none;
+		color: black;
+	}
+	#retour a:visited {  		
+	}
+	#retour a:hover {  
+		color: #FF0066;  
+	}	
+  </style>
+</head>
+<body>
+  <div id="errors"></div>
+  
+  <div class="svg-container">
+	<div id="retour"><a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" height="2vmin" style="vertical-align: -0.125em;">
+			<path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/>
+		</svg> Constructions animées</a></div>  
+	<svg id="svgiep" preserveAspectRatio="xMinYMin meet" class="svg-content"  viewBox="0 0 710 440" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+  
+
+  <script id="figurexml" type="text/xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<INSTRUMENPOCHE version="2">
+
+
+
+<!-- Régis Deleuze (rdeleuze@ac-reims.fr) -->
+
+
+
+<action abscisse="600" ordonnee="50" id="50" mouvement="creer" objet="texte" />
+<action texte="$\textbf{Construire un triangle équiltéral}$" id="50" couleur="noir" mouvement="ecrire" objet="texte" police="arial" taille="19"/>
+<action mouvement="translation" objet="texte" id="50" abscisse="50" ordonnee="50" />
+<action abscisse="50" ordonnee="75" id="51" mouvement="creer" objet="texte" />
+<action texte="$\text{Il s'agit de construire le triangle équilatéral }ABC\text{ tel que }AB=6\text{ cm}$" id="51" taille="16" couleur="rouge" mouvement="ecrire" objet="texte" tempo="30" />
+
+
+
+<action abscisse="350" ordonnee="145" id="52" mouvement="creer" objet="texte" />
+<action texte="$\text{À la règle, on trace un segment }[AB]\text{ de longueur 6 cm}$" id="52" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action ordonnee="117.65" abscisse="325.55" couleur="noir" id="1" mouvement="creer" objet="point" />
+<action ordonnee="-3.55" abscisse="-31.75" couleur="noir" nom="A" id="1" mouvement="nommer" objet="point" />
+<action abscisse="100" ordonnee="300" id="1" mouvement="translation" objet="point" />
+<action mouvement="graduations" objet="regle" />
+<action tempo="10" mouvement="montrer" objet="regle" />
+<action tempo="10" cible="1" mouvement="translation" objet="regle" />
+<action sens="2" angle="10" mouvement="rotation" objet="regle" />
+<action tempo="10" abscisse="125" ordonnee="175" mouvement="montrer" objet="crayon" />
+<action abscisse="100" ordonnee="300" tempo="10" cible="1" mouvement="translation" objet="crayon" />
+<action abscisse="277.265" ordonnee="331.256" epaisseur="0" couleur="0" id="2" mouvement="tracer" objet="crayon" />
+<action mouvement="masquer" objet="crayon" />
+<action ordonnee="122.6" abscisse="164.15" couleur="noir" id="3" mouvement="creer" objet="point" />
+<action tempo="10" ordonnee="2.85" abscisse="10.6" couleur="noir" nom="B" id="3" mouvement="nommer" objet="point" />
+<action abscisse="277.265" ordonnee="331.256" id="3" mouvement="translation" objet="point" />
+<action mouvement="masquer" objet="regle" />
+<action texte="$\text{À la règle, on trace un segment }[AB]\text{ de longueur 6 cm}$" id="52" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+
+
+
+
+<action abscisse="350" ordonnee="170" id="53" mouvement="creer" objet="texte" />
+<action texte="$\text{On trace un arc de cercle de centre }A\text{ et passant par }B$" id="53" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action tempo="10" abscisse="395" ordonnee="308" mouvement="montrer" objet="compas" />
+<action tempo="10" cible="1" mouvement="translation" objet="compas" />
+<action cible="3" mouvement="rotation" objet="compas" />
+<action cible="3" mouvement="ecarter" objet="compas" tempo="10" />
+<action sens="-2" angle="-35" mouvement="rotation" objet="compas" />
+<action mouvement="lever" objet="compas" tempo="6" />
+<action couleur="lightseagreen" epaisseur="0" sens="-2" fin="-62" debut="-35" id="4" mouvement="tracer" objet="compas" />
+<action mouvement="coucher" objet="compas" tempo="10" />
+<action texte="$\text{On trace un arc de cercle de centre }A\text{ et passant par }B$" id="53" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+
+
+
+
+<action abscisse="350" ordonnee="190" id="54" mouvement="creer" objet="texte" />
+<action texte="$\text{On trace un arc de cercle de centre }B\text{ et passant par }A$" id="54" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action cible="3" mouvement="translation" objet="compas" tempo="10" />
+<action sens="-2" angle="-88" mouvement="rotation" objet="compas" tempo="5" />
+<action mouvement="lever" objet="compas" tempo="5" />
+<action couleur="lightseagreen" epaisseur="0" sens="-2" fin="-122" debut="-88" id="5" mouvement="tracer" objet="compas" />
+<action mouvement="coucher" objet="compas" tempo="5" />
+<action mouvement="masquer" objet="compas" />
+<action texte="$\text{On trace un arc de cercle de centre }B\text{ et passant par }A$" id="54" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+
+
+
+<action abscisse="350" ordonnee="210" id="55" mouvement="creer" objet="texte" />
+<action texte="$\text{Les deux arcs de cercle se coupent en }C$" id="55" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action ordonnee="105.4" abscisse="452.75" couleur="noir" id="6" mouvement="creer" objet="point" />
+<action tempo="10" ordonnee="-37.45" abscisse="-4.9" couleur="noir" nom="C" id="6" mouvement="nommer" objet="point" />
+<action abscisse="215.701" ordonnee="162.112" id="6" mouvement="translation" objet="point" />
+<action texte="$\text{Les deux arcs de cercle se coupent en }C$" id="55" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+
+
+
+<action abscisse="350" ordonnee="230" id="56" mouvement="creer" objet="texte" />
+<action texte="$\text{On trace les côtés }[AC]\text{ et }[BC]$" id="56" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+<action sens="-180" angle="0" mouvement="rotation" objet="regle" />
+<action mouvement="vide" objet="regle" />
+<action tempo="10" abscisse="116" ordonnee="382" mouvement="montrer" objet="regle" />
+<action tempo="5" cible="1" mouvement="translation" objet="regle" />
+<action cible="6" mouvement="rotation" objet="regle" />
+<action sens="-180" angle="-113" mouvement="rotation" objet="crayon" />
+<action abscisse="72" ordonnee="168" mouvement="montrer" objet="crayon" />
+<action cible="1" mouvement="translation" objet="crayon" />
+<action id="7" epaisseur="0" couleur="noir" cible="6" mouvement="tracer" objet="crayon" />
+<action cible="6" mouvement="translation" objet="regle" />
+<action cible="3" mouvement="rotation" objet="regle" />
+<action sens="5" angle="-40.61" mouvement="rotation" objet="crayon" />
+<action id="8" epaisseur="0" couleur="noir" cible="3" mouvement="tracer" objet="crayon" />
+<action mouvement="masquer" objet="crayon" />
+<action mouvement="masquer" objet="regle" />
+<action texte="$\text{On trace les côtés }[AC]\text{ et }[BC]$" id="56" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" />
+
+
+
+
+<action cibles="1,3,6" epaisseur="0" couleur="darkblue" forme="polygone" id="100" mouvement="tracer" objet="crayon" opacite="5" />
+<action ordonnee="233.65" abscisse="155.6" forme="\" couleur="mediumvioletred" id="9" mouvement="creer" objet="longueur" />
+<action ordonnee="247.25" abscisse="247.15" forme="/" couleur="mediumvioletred" id="10" mouvement="creer" objet="longueur" />
+<action ordonnee="316.15" abscisse="191.15" forme="/" couleur="mediumvioletred" id="11" mouvement="creer" objet="longueur" />
+<action abscisse="160.35" ordonnee="324.65" id="14" mouvement="creer" objet="texte" />
+<action couleur="mediumvioletred" texte="6 cm" id="14" mouvement="ecrire" objet="texte" />
+</INSTRUMENPOCHE>
+  </script>
+
+  <script type="text/javascript">
+    /**
+     * Affiche une erreur dans la page
+     * @param {Error|string} error
+     */
+    function displayError(error) {
+      console.error(error)
+      var pre = document.createElement('pre')
+      var txt = document.createTextNode(error.toString())
+      pre.appendChild(txt)
+      document.getElementById('errors').appendChild(pre)
+    }
+
+    try {
+      var xml = document.getElementById('figurexml').innerHTML
+	  
+	  
+        
+            var svg = document.getElementById("svgiep");			          
+            var iepapp = new iep.iepApp();			
+            iepapp.addDoc(svg,xml,false);
+
+    } catch (error) {
+      displayError("Le lecteur a échoué à lire le script fourni")
+      console.error(error)
+    }
+	
+	
+	function iniFrame() { 
+		if ( window.location !== window.parent.location ) 
+		{ 
+		  
+			// The page is in an iFrames 
+			document.getElementById('retour').style.visibility = 'hidden';
+		}  
+		else { 
+		} 
+	} 
+	  
+	// Calling iniFrame function 
+	iniFrame(); 		
+	
+  </script>
+</body>
+</html>

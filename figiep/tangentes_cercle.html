@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tangentes à un cercle par un point extérieur au cercle</title>	  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../assets/js/iepjsmin.js"></script>
+	<script type="text/javascript" src="../librairies/MathJax/MathJax.js?config=TeX-AMS-MML_SVG-full.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		extensions: ['tex2jax.js','MatchWebFonts.js'],
+        tex2jax: {
+          inlineMath: [["$","$"],["\\(","\\)"]]
+        },
+		SVG: {    
+			font: "STIX-Web"
+		  },
+        jax: ["input/TeX","output/SVG"],
+        TeX: {extensions: ["color.js"],
+				Augment: {
+				  Definitions: {
+					macros: {
+					  overparen: ['UnderOver','23DC'], // UnderOver represents the MathML element, 23DC the unicode character
+					  underparen: ['UnderOver','23DD'] // UnderOver represents the MathML element, 23DC the unicode character
+					}
+				  }
+				}  				
+			},			
+        messageStyle:'none'
+      })
+    </script>
+    
+  <style type="text/css">
+    html, body, div {margin:0; padding: 0; background: rgba(0,0,0,.8);}
+	.svg-container {
+		--largeur:780 ;
+		--hauteur:480 ;		
+		position: relative;		
+		padding-bottom: calc( 100% * var(--hauteur) / var(--largeur) ); 
+		vertical-align: middle;
+		overflow: hidden;
+		background: #f9f6f6;
+		margin: 0px auto;
+	}	
+	@media all and (min-aspect-ratio: 780/480)  {
+		.svg-container {
+			width: calc( 100vh * 780 / 480 );
+		}
+	}
+	@media all and (max-aspect-ratio: 780/480)  {
+		.svg-container {
+			width: 100vw;
+		}
+	}
+	.svg-content {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;	
+	}	
+	#retour {
+		position:absolute;
+		z-index:9999;
+		top: 1vmin;
+		right: 2vmin;
+		font-size: 2vmin;
+		background: none;
+		font-family: 'Lato', sans-serif;
+	}
+	#retour a {
+		text-decoration: none;
+		color: black;
+	}
+	#retour a:visited {  		
+	}
+	#retour a:hover {  
+		color: #FF0066;  
+	}		
+  </style>
+</head>
+<body>
+  <div id="errors"></div>
+  
+  <div class="svg-container">
+	<div id="retour"><a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" height="2vmin" style="vertical-align: -0.125em;">
+			<path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/>
+		</svg> Constructions animées</a></div>    
+	<svg id="svgiep" preserveAspectRatio="xMinYMin meet" class="svg-content"  viewBox="0 0 780 480" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+  
+
+  <script id="figurexml" type="text/xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<INSTRUMENPOCHE version="2">
+
+
+
+<!-- Régis Deleuze (rdeleuze@ac-reims.fr) -->
+
+
+
+
+<action abscisse="600" ordonnee="50" id="50" mouvement="creer" objet="texte" />
+<action texte="$\textbf{Construire les tangentes à un cercle passant par un point extérieur au cercle}$" id="50" taille="19" couleur="noir" mouvement="ecrire" police="arial" objet="texte"/>
+<action mouvement="translation" objet="texte" id="50" abscisse="50" ordonnee="50" />
+
+
+
+<action abscisse="150" ordonnee="290" mouvement="translation" objet="compas" vitesse="50"/>
+<action ecart="100" mouvement="ecarter" objet="compas" />
+<action mouvement="lever" objet="compas" />
+<action sens="360" epaisseur="1" debut="0" fin="360" id="11" couleur="saddlebrown" mouvement="tracer" objet="compas" />
+<action mouvement="coucher" objet="compas"/>
+
+<action abscisse="150" ordonnee="290" id="10" mouvement="creer" objet="point" />
+<action ordonnee="-11.3" abscisse="-36.7" couleur="0" nom="O" id="10" mouvement="nommer" objet="point" />
+
+<action abscisse="420" ordonnee="290" id="12" mouvement="creer" objet="point" />
+<action ordonnee="-15.5" abscisse="21.2" couleur="0" nom="A" id="12" mouvement="nommer" objet="point" />
+
+<action abscisse="50" ordonnee="75" id="51" mouvement="creer" objet="texte" />
+<action texte="$\text{Il s'agit de tracer les tangentes au cercle de centre }O\text{ et qui passent par le point }A$" id="51" taille="16" couleur="rouge" mouvement="ecrire" objet="texte" tempo="30"/>
+
+
+
+<!-- Point I -->
+<action abscisse="500" ordonnee="140" id="52" mouvement="creer" objet="texte" />
+<action texte="$\text{On place le milieu }I\text{ du segment }[OA]$" id="52" taille="16" couleur="noir" mouvement="ecrire" objet="texte"/>
+
+<action mouvement="graduations" objet="regle" />
+<action abscisse="350" ordonnee="150" mouvement="montrer" objet="regle" />
+<action abscisse="150" ordonnee="291" mouvement="translation" objet="regle" />
+
+<action abscisse="400" ordonnee="100" mouvement="montrer" objet="crayon" />
+<action cible="10" mouvement="translation" objet="crayon" tempo="10"/>
+<action abscisse="420" ordonnee="290" epaisseur="1" id="14" mouvement="tracer" objet="crayon" />
+
+<action mouvement="masquer" objet="crayon" />
+
+<action abscisse="150" ordonnee="80" id="13" mouvement="creer" objet="point" />
+<action ordonnee="8.5" abscisse="-5.65" couleur="0" nom="I" id="13" mouvement="nommer" objet="point" />
+<action abscisse="285" ordonnee="290" id="13" mouvement="translation" objet="point" tempo="15" />
+
+<action mouvement="masquer" objet="regle" />
+
+<action forme="//" abscisse="217.5" ordonnee="290" id="15" epaisseur="1.5" couleur="crimson" mouvement="tracer" objet="longueur" />
+<action forme="//" abscisse="352.5" ordonnee="290" id="16" epaisseur="1.5" couleur="crimson" mouvement="tracer" objet="longueur" tempo="20"/>
+
+<action texte="$\text{On place le milieu }I\text{ du segment }[OA]$" id="52" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+
+<!-- cercle de diamètre [OA] -->
+<action abscisse="500" ordonnee="160" id="53" mouvement="creer" objet="texte" />
+<action texte="$\text{On trace le cercle de diamètre }[OA]$" id="53" taille="16" couleur="noir" mouvement="ecrire" objet="texte"/>
+
+<action ecart="0" mouvement="ecarter" objet="compas" />
+<action abscisse="100" ordonnee="100" mouvement="montrer" objet="compas" tempo="10"/>
+<action cible="13" mouvement="translation" objet="compas" tempo="10"/>
+<action ecart="135" mouvement="ecarter" objet="compas" tempo="10"/>
+<action mouvement="lever" objet="compas" tempo="5"/>
+<action sens="-5" epaisseur="1" debut="0" fin="-360" id="17" couleur="seagreen" mouvement="tracer" objet="compas" />
+<action mouvement="coucher" objet="compas"tempo="6"/>
+
+<action mouvement="masquer" objet="compas" />
+
+<action texte="$\text{On trace le cercle de diamètre }[OA]$" id="53" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+
+<!-- Points M et N -->
+<action abscisse="500" ordonnee="180" id="54" mouvement="creer" objet="texte" />
+<action texte="$\text{Les deux cercles se coupent en }M\text{ et }N$" id="54" taille="16" couleur="noir" mouvement="ecrire" objet="texte"/>
+
+<action abscisse="50" ordonnee="100" id="18" mouvement="creer" objet="point" />
+<action ordonnee="-38.15" abscisse="-19.75" couleur="0" nom="M" id="18" mouvement="nommer" objet="point" />
+<action abscisse="187.037" ordonnee="197.112" id="18" mouvement="translation" objet="point" />
+
+
+<action abscisse="250" ordonnee="100" id="19" mouvement="creer" objet="point" />
+<action ordonnee="11.3" abscisse="-14.1" couleur="0" nom="N" id="19" mouvement="nommer" objet="point" />
+<action abscisse="187.037" ordonnee="382.888" id="19" mouvement="translation" objet="point" />
+
+<action texte="$\text{Les deux cercles se coupent en }M\text{ et }N$" id="54" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+
+<!-- Tracé de (AM) -->
+<action abscisse="500" ordonnee="200" id="55" mouvement="creer" objet="texte" />
+<action texte="$\text{On trace la droite }(AM)$" id="55" taille="16" couleur="noir" mouvement="ecrire" objet="texte"/>
+
+<action mouvement="vide" objet="regle" />
+<action abscisse="300" ordonnee="300" mouvement="montrer" objet="regle" tempo="5"/>
+<action sens="1" angle="21.738" mouvement="rotation" objet="regle" />
+<action abscisse="91.08" ordonnee="160" mouvement="translation" objet="regle" tempo="5"/>
+
+<action abscisse="400" ordonnee="150" mouvement="montrer" objet="crayon" />
+<action abscisse="91.08" ordonnee="158.851" mouvement="translation" objet="crayon" tempo="5"/>
+<action abscisse="466.406" ordonnee="308.503" epaisseur="1" id="20" mouvement="tracer" couleur="navy" objet="crayon" />
+
+<action mouvement="masquer" objet="crayon" />
+
+<action texte="$\text{On trace la droite }(AM)$" id="55" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+
+<!-- Tracé de (AN) -->
+<action abscisse="500" ordonnee="220" id="56" mouvement="creer" objet="texte" />
+<action texte="$\text{On trace la droite }(AN)$" id="56" taille="16" couleur="noir" mouvement="ecrire" objet="texte"/>
+
+<action sens="-1" angle="-21.738" mouvement="rotation" objet="regle" />
+<action abscisse="91.08" ordonnee="421.148" mouvement="translation" objet="regle" tempo="5"/>
+
+<action sens="-90" angle="-75" mouvement="rotation" objet="crayon" />
+<action abscisse="91.08" ordonnee="421.148" mouvement="montrer" objet="crayon" tempo="5"/>
+<action abscisse="466.406" ordonnee="271.497" epaisseur="1" id="21" mouvement="tracer" couleur="navy" objet="crayon" />
+
+<action mouvement="masquer" objet="crayon" />
+<action mouvement="masquer" objet="regle" />
+
+<action texte="$\text{On trace la droite }(AN)$" id="56" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+
+<!-- Conclusion -->
+<action abscisse="500" ordonnee="250" id="57" mouvement="creer" objet="texte" />
+<action texte="$\definecolor{dd}{rgb}{0,0,0.5}\definecolor{cercle}{rgb}{0.54,0.27,0.075}\begin{array}{l}\text{Les droites }\textcolor{dd}{(AM)}\text{ et }\textcolor{dd}{(AN)}\text{ sont tangentes}\\[-1cm]\text{au }\textcolor{cercle}{\text{cercle}}\text{ de centre }O\end{array}$" id="57" taille="16" couleur="noir" mouvement="ecrire" objet="texte" tempo="50"/>
+
+
+
+
+
+
+<action abscisse="550" ordonnee="310" id="58" mouvement="creer" objet="texte" />
+<action texte="(car :" id="58" taille="16" couleur="noir" mouvement="ecrire" objet="texte" tempo="30"/>
+
+<!-- Triangle AOM -->
+<action abscisse="550" ordonnee="340" id="59" mouvement="creer" objet="texte" />
+<action texte="$AOM\text{ est rectangle en }M$" id="59" taille="16" couleur="noir" mouvement="ecrire" objet="texte"/>
+
+<!-- Coloriage du triangle -->
+<action cibles="10,12,18" epaisseur="0" couleur="darkblue" forme="polygone" id="24" mouvement="tracer" objet="crayon" opacite="5" vitesse="1000" />
+<action couleur="crimson" abscisse_inter="187.037" ordonnee_inter="197.112" abscisse_sommet="194.129" ordonnee_sommet="213.61" id="22" epaisseur="1" mouvement="creer" objet="angle_droit" tempo="60"/>
+
+
+
+<action texte="$AOM\text{ est rectangle en }M$" id="59" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+<action cibles="10,12,18" epaisseur="0" couleur="black" forme="polygone" id="24" mouvement="tracer" objet="crayon" opacite="0" vitesse="1000" />
+
+<!-- Triangle AON -->
+<action abscisse="550" ordonnee="360" id="60" mouvement="creer" objet="texte" />
+<action texte="$AON\text{ est rectangle en }N\text{)}$" id="60" taille="16" couleur="noir" mouvement="ecrire" objet="texte"/>
+
+<!-- Coloriage du triangle -->
+<action epaisseur="1" ordonnee2="197.112" abscisse2="187.037" ordonnee1="290" abscisse1="150" mouvement="tracer" couleur="0" id="5000" objet="trait"/>
+
+<action cibles="10,12,19" epaisseur="0" couleur="darkblue" forme="polygone" id="24" mouvement="tracer" objet="crayon" opacite="5" vitesse="1000" />
+<action couleur="crimson" abscisse_inter="187.037" ordonnee_inter="382.888" abscisse_sommet="194.129" ordonnee_sommet="366.39" id="23" epaisseur="1" mouvement="creer" objet="angle_droit" tempo="60"/>
+
+
+<action texte="$AON\text{ est rectangle en }N\text{)}$" id="60" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+
+<action texte="(car :" id="58" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+<action epaisseur="1" ordonnee2="382.888" abscisse2="187.037" ordonnee1="290" abscisse1="150" mouvement="tracer" couleur="0" id="5001" objet="trait"/> 
+
+
+<action cibles="10" epaisseur="0" couleur="darkblue" forme="polygone" id="24" mouvement="tracer" objet="crayon" opacite="5" vitesse="100" />
+
+
+</INSTRUMENPOCHE>
+  </script>
+
+  <script type="text/javascript">
+    /**
+     * Affiche une erreur dans la page
+     * @param {Error|string} error
+     */
+    function displayError(error) {
+      console.error(error)
+      var pre = document.createElement('pre')
+      var txt = document.createTextNode(error.toString())
+      pre.appendChild(txt)
+      document.getElementById('errors').appendChild(pre)
+    }
+
+    try {
+      var xml = document.getElementById('figurexml').innerHTML
+	  
+	  
+        
+            var svg = document.getElementById("svgiep");			          
+            var iepapp = new iep.iepApp();			
+            iepapp.addDoc(svg,xml,false);
+
+    } catch (error) {
+      displayError("Le lecteur a échoué à lire le script fourni")
+      console.error(error)
+    }
+	
+	
+	function iniFrame() { 
+		if ( window.location !== window.parent.location ) 
+		{ 
+		  
+			// The page is in an iFrames 
+			document.getElementById('retour').style.visibility = 'hidden';
+		}  
+		else { 
+		} 
+	} 
+	  
+	// Calling iniFrame function 
+	iniFrame(); 		
+		
+  </script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Médiatrice d'un segment (équerre)</title>	  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../assets/js/iepjsmin.js"></script>
+	<script type="text/javascript" src="../librairies/MathJax/MathJax.js?config=TeX-AMS-MML_SVG-full.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		extensions: ['tex2jax.js','MatchWebFonts.js'],
+        tex2jax: {
+          inlineMath: [["$","$"],["\\(","\\)"]]
+        },
+		SVG: {    
+			font: "STIX-Web"
+		  },
+        jax: ["input/TeX","output/SVG"],
+        TeX: {extensions: ["color.js"],
+				Augment: {
+				  Definitions: {
+					macros: {
+					  overparen: ['UnderOver','23DC'], // UnderOver represents the MathML element, 23DC the unicode character
+					  underparen: ['UnderOver','23DD'] // UnderOver represents the MathML element, 23DC the unicode character
+					}
+				  }
+				}  				
+			},			
+        messageStyle:'none'
+      })
+    </script>
+    
+  <style type="text/css">
+    html, body, div {margin:0; padding: 0; background: rgba(0,0,0,.8);}
+	.svg-container {
+		--largeur:790 ;
+		--hauteur:490 ;		
+		position: relative;		
+		padding-bottom: calc( 100% * var(--hauteur) / var(--largeur) ); 
+		vertical-align: middle;
+		overflow: hidden;
+		background: #f9f6f6;
+		margin: 0px auto;
+	}	
+	@media all and (min-aspect-ratio: 790/490)  {
+		.svg-container {
+			width: calc( 100vh * 790 / 490 );
+		}
+	}
+	@media all and (max-aspect-ratio: 790/490)  {
+		.svg-container {
+			width: 100vw;
+		}
+	}
+	.svg-content {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;	
+	}	
+	#retour {
+		position:absolute;
+		z-index:9999;
+		top: 1vmin;
+		right: 2vmin;
+		font-size: 2vmin;
+		background: none;
+		font-family: 'Lato', sans-serif;
+	}
+	#retour a {
+		text-decoration: none;
+		color: black;
+	}
+	#retour a:visited {  		
+	}
+	#retour a:hover {  
+		color: #FF0066;  
+	}		
+  </style>
+</head>
+<body>
+  <div id="errors"></div>
+  
+  <div class="svg-container">
+	<div id="retour"><a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" height="2vmin" style="vertical-align: -0.125em;">
+			<path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/>
+		</svg> Constructions animées</a></div>    
+	<svg id="svgiep" preserveAspectRatio="xMinYMin meet" class="svg-content"  viewBox="0 0 790 490" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+  
+
+  <script id="figurexml" type="text/xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<INSTRUMENPOCHE version="2">
+
+
+<!-- Régis Deleuze (rdeleuze@ac-reims.fr) -->
+
+
+
+<action  abscisse="600" ordonnee="50" id="50" mouvement="creer" objet="texte" />
+<action texte="$\textbf{Tracer la médiatrice d'un segment à l'aide d'une équerre}$" id="50" taille="19" couleur="noir" mouvement="ecrire" police="arial" objet="texte"/>
+<action mouvement="translation" objet="texte" id="50" abscisse="50" ordonnee="50" />
+
+<action  abscisse="50" ordonnee="75" id="51" mouvement="creer" objet="texte" />
+<action texte="$\text{Il s'agit de tracer la médiatrice du segment }[AB]\text{ en utilisant une règle graduée et une équerre}$" id="51" taille="16" couleur="rouge" mouvement="ecrire" objet="texte"/>
+
+
+
+
+<action abscisse="70" ordonnee="280" id="11" mouvement="creer" objet="point" />
+<action ordonnee="-17.65" abscisse="-36" couleur="0" nom="A"  id="11" mouvement="nommer" objet="point" />
+
+<action abscisse="295.52" ordonnee="362.08" id="12" mouvement="creer" objet="point" />
+<action ordonnee="0" abscisse="16.95" couleur="0" nom="B"  id="12" mouvement="nommer" objet="point" />
+
+
+<action couleur="0" epaisseur="1" ordonnee2="362.08" abscisse2="295.52" ordonnee1="280" abscisse1="70" mouvement="tracer" id="3000" objet="trait" tempo="20"/>
+
+<action  abscisse="450" ordonnee="150" id="52" mouvement="creer" objet="texte" />
+<action texte="$\text{On mesure le segment }[AB]\text{ :}$" id="52" taille="16" couleur="noir" mouvement="ecrire" objet="texte"/>
+
+<action mouvement="graduations" objet="regle" />
+<action abscisse="400" ordonnee="250" mouvement="montrer" objet="regle" tempo="10"/>
+<action abscisse="69" ordonnee="281" mouvement="translation" objet="regle" tempo="10" />
+<action sens="2" angle="20" mouvement="rotation" objet="regle" />
+
+<action texte="$\text{On mesure le segment }[AB]\text{ :}$" id="52" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+
+
+<action  abscisse="650" ordonnee="150" id="53" mouvement="creer" objet="texte" />
+<action texte="$AB = 8\text{ cm.}$" id="53" taille="16" couleur="noir" mouvement="ecrire" objet="texte" tempo="40" />
+<action texte="$AB = 8\text{ cm.}$" id="53" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+
+
+
+
+<action  abscisse="450" ordonnee="170" id="54" mouvement="creer" objet="texte" />
+<action texte="$\text{On place le milieu }I\text{ du segment }[AB]\text{.}$" id="54" taille="16" couleur="noir" mouvement="ecrire" objet="texte" tempo="20" />
+
+
+<action abscisse="40" ordonnee="40" id="20" mouvement="creer" objet="point" />
+<action ordonnee="12" abscisse="1.45" couleur="0" nom="I"  id="20" mouvement="nommer" objet="point" />
+<action abscisse="182.76" ordonnee="321.04" id="20" mouvement="translation" objet="point" tempo="10" />
+<action mouvement="masquer" objet="regle" />
+
+<action abscisse="500" ordonnee="100" mouvement="montrer" objet="crayon" />
+<action abscisse="134.04" ordonnee="294.09" mouvement="translation" objet="crayon" />
+<action abscisse="118.72" ordonnee="306.95" epaisseur="1" id="21" mouvement="tracer" objet="crayon" couleur="crimson" />
+<action abscisse="246.8" ordonnee="335.13" mouvement="translation" objet="crayon" />
+<action abscisse="231.48" ordonnee="347.99" epaisseur="1" id="22" mouvement="tracer" objet="crayon" couleur="crimson" />
+<action mouvement="masquer" objet="crayon" />
+
+
+<action texte="$\text{On place le milieu }I\text{ du segment }[AB]\text{.}$" id="54" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte"/>
+
+
+
+
+
+<action  abscisse="450" ordonnee="190" id="55" mouvement="creer" objet="texte" />
+<action texte="$\begin{array}{l}\text{On trace la droite }(d)\text{ perpendiculaire à }(AB) \\[-1cm] \text{et qui passe par le point }I\text{.}\end{array}$" id="55" taille="16" couleur="noir" mouvement="ecrire" objet="texte" tempo="20" />
+
+<action abscisse="500" ordonnee="100" mouvement="montrer" objet="equerre" tempo="10"/>
+<action cible="12" mouvement="translation" objet="equerre" tempo="10"/>
+<action sens="1" angle="20" mouvement="rotation" objet="equerre" tempo="6"/>
+<action cible="20" mouvement="translation" objet="equerre" tempo="10"/>
+
+<action sens="180" angle="110" mouvement="rotation" objet="regle" />
+<action mouvement="vide" objet="regle" />
+<action abscisse="10" ordonnee="20" mouvement="montrer" objet="regle" />
+<action abscisse="256" ordonnee="115.78" mouvement="translation" objet="regle" tempo="20" />
+<action mouvement="masquer" objet="equerre" />
+
+<action abscisse="500" ordonnee="150" mouvement="montrer" objet="crayon" />
+<action abscisse="252.30" ordonnee="129.97" mouvement="translation" objet="crayon" />
+<action abscisse="113.58" ordonnee="511.10" epaisseur="1" id="23" mouvement="tracer" objet="crayon" couleur="navy" />
+
+<action mouvement="masquer" objet="crayon" />
+<action mouvement="masquer" objet="regle" />
+
+<action abscisse="300" ordonnee="150" mouvement="montrer" objet="crayon" />
+<action abscisse="186.86" ordonnee="309.76" mouvement="translation" objet="crayon" />
+<action abscisse="198.14" ordonnee="313.87" epaisseur="1" id="24" mouvement="tracer" objet="crayon" couleur="crimson" />
+<action abscisse="194.03" ordonnee="325.14" epaisseur="1" id="25" mouvement="tracer" objet="crayon" couleur="crimson" />
+
+<action mouvement="masquer" objet="crayon" />
+
+<action abscisse="230" ordonnee="106.2"  id="26" mouvement="creer" objet="texte" />
+<action texte="$(d)$" id="26" taille="16" couleur="navy" mouvement="ecrire" objet="texte" />
+
+
+
+<action texte="$\begin{array}{l}\text{On trace la droite }(d)\text{ perpendiculaire à }(AB) \\[-1cm] \text{et qui passe par le point }I\text{.}\end{array}$" id="55" taille="16" couleur="darkgray" mouvement="ecrire" objet="texte" tempo="20" />
+
+
+
+<action  abscisse="450" ordonnee="250" id="27" mouvement="creer" objet="texte" />
+<action texte="$\definecolor{dr}{rgb}{0,0,0.5}\text{La droite }\textcolor{dr}{(d)}\text{ est la médiatrice du segment }[AB]\text{.}$" id="27" taille="16" couleur="noir" mouvement="ecrire" objet="texte" />
+
+
+
+
+</INSTRUMENPOCHE>
+  </script>
+
+  <script type="text/javascript">
+    /**
+     * Affiche une erreur dans la page
+     * @param {Error|string} error
+     */
+    function displayError(error) {
+      console.error(error)
+      var pre = document.createElement('pre')
+      var txt = document.createTextNode(error.toString())
+      pre.appendChild(txt)
+      document.getElementById('errors').appendChild(pre)
+    }
+
+    try {
+      var xml = document.getElementById('figurexml').innerHTML
+	  
+	  
+        
+            var svg = document.getElementById("svgiep");			          
+            var iepapp = new iep.iepApp();			
+            iepapp.addDoc(svg,xml,false);
+
+    } catch (error) {
+      displayError("Le lecteur a échoué à lire le script fourni")
+      console.error(error)
+    }
+	
+	
+	function iniFrame() { 
+		if ( window.location !== window.parent.location ) 
+		{ 
+		  
+			// The page is in an iFrames 
+			document.getElementById('retour').style.visibility = 'hidden';
+		}  
+		else { 
+		} 
+	} 
+	  
+	// Calling iniFrame function 
+	iniFrame(); 
+	
+  </script>
+</body>
+</html>
