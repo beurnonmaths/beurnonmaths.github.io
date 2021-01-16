@@ -1,0 +1,542 @@
+<!doctype html>
+<head>
+		<title>Constructions animées avec InstrumEnpoche - Droites</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="images/logo.svg"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />		
+		<link rel="stylesheet" href="assets/css/featherlight.min.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/iep.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/tooltip.css" type="text/css"  />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type="text/css" rel="stylesheet">
+		<script src="assets/js/clipboard.min.js"></script>
+</head>
+
+
+
+<style type="text/css">
+.featherlight-content button {	/* Mise en forme du bouton de fermeture de la lightbox */
+box-shadow: unset;
+height:auto;
+letter-spacing:0px;
+}
+.featherlight-content {		/* Pour éviter l'apparition d'ascenseurs en cas de redimensionnement */
+	border-bottom:0px!important;
+}
+.featherlight .featherlight-content {
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+/* fig1 : figiep/bissectrice_compas.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+@media all and (min-aspect-ratio: 700/490)  { /* Hauteur max : 95vh et Largeur = 95 vh * 700/490 = 135vh */
+.fig1 .featherlight-content {				
+		width:135vh;
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 700/490)  { /* Largeur max : 95vw et Hauteur = 95vw * 490/700 */
+.fig1 .featherlight-content {				
+		width:95vw;
+		height:66vw;
+    }	
+}
+/* fig2 : 
+	figiep/bissectrice_rapporteur.html
+	figiep/parallele_compas.html
+	figiep/parallele_equerre.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+@media all and (min-aspect-ratio: 800/490)  { /* Hauteur max : 95vh et Largeur = 95 vh * 800/490 = 155vh */
+.fig2 .featherlight-content {				
+		width:155vh;
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 800/490)  { /* Largeur max : 95vw et Hauteur = 95vw * 490/800 */
+.fig2 .featherlight-content {				
+		width:95vw;
+		height:58vw;
+    }		
+}
+/* fig3 : figiep/mediatrice_equerre.html */
+/* En fonction du ration largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+@media all and (min-aspect-ratio: 790/490)  { /* Hauteur max : 95vh et Largeur = 95 vh * 790/490 = 153vh */
+.fig3 .featherlight-content {				
+		width:153vh;
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 790/490)  { /* Largeur max : 95vw et Hauteur = 95vw * 490/790 */
+.fig3 .featherlight-content {				
+		width:95vw;
+		height:59vw;
+    }		
+}
+/* fig4 : figiep/mediatrice_compas.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig4 {
+	--largeur:770 ;
+	--hauteur:520 ;
+}
+@media all and (min-aspect-ratio: 770/520)  { /* Hauteur max : 95vh et Largeur = 95 vh * 770/520 */
+.fig4 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 770/520)  { /* Largeur max : 95vw et Hauteur = 95vw * 520/770 */
+.fig4 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig5 : figiep/mediatrice_compas_meme_ecartement.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig5 {
+	--largeur:770 ;
+	--hauteur:530 ;
+}
+@media all and (min-aspect-ratio: 770/530)  { /* Hauteur max : 95vh et Largeur = 95 vh * 770/530 */
+.fig5 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 770/530)  { /* Largeur max : 95vw et Hauteur = 95vw * 530/770 */
+.fig5 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig6 : figiep/perpendiculaire.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig6 {
+	--largeur:780 ;
+	--hauteur:510 ;
+}
+@media all and (min-aspect-ratio: 780/510)  { /* Hauteur max : 95vh et Largeur = 95 vh * 780/510 */
+.fig6 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 780/510)  { /* Largeur max : 95vw et Hauteur = 95vw * 510/780 */
+.fig6 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig7 : figiep/tangente.html
+		figiep/cercle_tangent.html
+		figiep/tangentes_cercle.html	*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig7 {
+	--largeur:780 ;
+	--hauteur:480 ;
+}
+@media all and (min-aspect-ratio: 780/480)  { /* Hauteur max : 95vh et Largeur = 95 vh * 780/480 */
+.fig7 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 780/480)  { /* Largeur max : 95vw et Hauteur = 95vw * 480/780 */
+.fig7 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig8 : figiep/mediatrices_triangle.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig8 {
+	--largeur:710 ;
+	--hauteur:520 ;
+}
+@media all and (min-aspect-ratio: 710/520)  { /* Hauteur max : 95vh et Largeur = 95 vh * 710/520 */
+.fig8 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 710/520)  { /* Largeur max : 95vw et Hauteur = 95vw * 520/710 */
+.fig8 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig9 : figiep/mediatrice_cote.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig9 {
+	--largeur:780 ;
+	--hauteur:460 ;
+}
+@media all and (min-aspect-ratio: 780/460)  { /* Hauteur max : 95vh et Largeur = 95 vh * 780/460 */
+.fig9 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 780/460)  { /* Largeur max : 95vw et Hauteur = 95vw * 460/780 */
+.fig9 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig10 : figiep/medianes_triangle.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig10 {
+	--largeur:780 ;
+	--hauteur:430 ;
+}
+@media all and (min-aspect-ratio: 780/430)  { /* Hauteur max : 95vh et Largeur = 95 vh * 780/430 */
+.fig10 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 780/430)  { /* Largeur max : 95vw et Hauteur = 95vw * 430/780 */
+.fig10 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig11 : figiep/medianes_troisieme.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig11 {
+	--largeur:760 ;
+	--hauteur:430 ;
+}
+@media all and (min-aspect-ratio: 760/430)  { /* Hauteur max : 95vh et Largeur = 95 vh * 760/430 */
+.fig11 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 760/430)  { /* Largeur max : 95vw et Hauteur = 95vw * 430/760 */
+.fig11 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig12 : figiep/mediatrice_triangle_equerre.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig12 {
+	--largeur:760 ;
+	--hauteur:460 ;
+}
+@media all and (min-aspect-ratio: 760/460)  { /* Hauteur max : 95vh et Largeur = 95 vh * 760/460 */
+.fig12 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 760/460)  { /* Largeur max : 95vw et Hauteur = 95vw * 460/760 */
+.fig12 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig13 : figiep/hauteurs_triangle.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig13 {
+	--largeur:710 ;
+	--hauteur:470 ;
+}
+@media all and (min-aspect-ratio: 710/470)  { /* Hauteur max : 95vh et Largeur = 95 vh * 710/470 */
+.fig13 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 710/470)  { /* Largeur max : 95vw et Hauteur = 95vw * 470/710 */
+.fig13 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig14 : figiep/bissectrices_triangle.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig14 {
+	--largeur:730 ;
+	--hauteur:440 ;
+}
+@media all and (min-aspect-ratio: 730/440)  { /* Hauteur max : 95vh et Largeur = 95 vh * 730/440 */
+.fig14 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 730/440)  { /* Largeur max : 95vw et Hauteur = 95vw * 440/730 */
+.fig14 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+</style>	
+			
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+</script>
+
+<body>
+
+<div class="titre">
+	Construction animées avec InstrumEnPoche
+</div>
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Accueil</a>
+  <a href="droites.html" class="active">Droites</a>
+  <a href="triangles.html">Triangles</a>
+  <a href="quadrilateres.html">Quadrilatères</a>
+  <a href="angles.html">Angles</a>
+  <a href="transformations.html">Transformations</a>
+  <a href="divers.html">Divers</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<main class="grid">
+
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/perpendiculaire.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_perpendiculaire.svg" alt="">
+			<span class="caption">Droites perpendiculaires</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="perpendiculaire.html"><i class="fas fa-chevron-circle-right"></i></a> Construire une droite perpepndiculaire à une droite donnée.
+		</div>
+  </article>  
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/parallele_equerre.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_parallele_equerre.svg" alt="">
+			<span class="caption">Droite parallèle (équerre)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="parallele_equerre.html"><i class="fas fa-chevron-circle-right"></i></a> Construire une droite parallèle à une droite donnée à la règle et à l'équerre.
+		</div>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/parallele_compas.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_parallele_compas.svg" alt="">
+			<span class="caption">Droite parallèle (compas)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="parallele_compas.html"><i class="fas fa-chevron-circle-right"></i></a> Construire une droite parallèle à une droite donnée à l'aide du compas.
+		</div>
+  </article>      
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/mediatrice_equerre.html" data-featherlight-variant="fig3" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_mediatrice_equerre.svg" alt="">
+			<span class="caption">Médiatrice (équerre)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="mediatrice_equerre.html"><i class="fas fa-chevron-circle-right"></i></a> Construire la médiatrice d'un segment à l'aide d'une équerre.
+		</div>
+  </article>     
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/mediatrice_compas.html" data-featherlight-variant="fig4" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_mediatrice_compas.svg" alt="">
+			<span class="caption">Médiatrice (compas)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="mediatrice_compas.html"><i class="fas fa-chevron-circle-right"></i></a> Construire la médiatrice d'un segment à l'aide d'un compas.
+		</div>
+  </article>    
+  
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/mediatrice_compas_meme_ecartement.html" data-featherlight-variant="fig5" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_mediatrice_compas_meme_ecartement.svg" alt="">
+			<span class="caption">Médiatrice (compas)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="mediatrice_compas_meme_ecartement.html"><i class="fas fa-chevron-circle-right"></i></a> Médiatrice d'un segment au compas en gardant le même écartement.
+		</div>
+  </article>   
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/bissectrice_rapporteur.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_bissectrice_rapporteur.svg" alt="">
+			<span class="caption">Bissectrice (rapporteur)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="bissectrice_rapporteur.html"><i class="fas fa-chevron-circle-right"></i></a> Construire la bissectrice d'un angle avec le rapporteur.
+		</div>
+  </article>     
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/bissectrice_compas.html" data-featherlight-variant="fig1" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_bissectrice_compas.svg" alt="">
+			<span class="caption">Bissectrice (compas)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="bissectrice_compas.html"><i class="fas fa-chevron-circle-right"></i></a> Construire la bissectrice d'un angle avec le compas.
+		</div>
+  </article>       
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/tangente.html" data-featherlight-variant="fig7" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_tangente.svg" alt="">
+			<span class="caption">Tangente à un cercle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="tangente.html"><i class="fas fa-chevron-circle-right"></i></a> Construire la tangente à un cercle passant par un point du cercle.
+		</div>
+  </article>    
+
+   <article>
+	<div class="vignette">
+		<a href="figiep/cercle_tangent.html" data-featherlight-variant="fig7" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_cercle_tangent.svg" alt="">
+			<span class="caption">Cercle tangent à une droite</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="cercle_tangent.html"><i class="fas fa-chevron-circle-right"></i></a> Construire le cercle tangent à une droite passant par un point de la droite.
+		</div>
+  </article>   
+  
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/tangentes_cercle.html" data-featherlight-variant="fig7" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_tangentes_cercle.svg" alt="">
+			<span class="caption">Tangentes à un cercle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="tangentes_cercle.html"><i class="fas fa-chevron-circle-right"></i></a> Construire les tangentes à un cercle passant par un point extérieur au cercle.
+		</div>
+  </article>  
+
+
+   <article>
+	<div class="vignette">
+		<a href="figiep/mediatrices_triangle.html" data-featherlight-variant="fig8" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_mediatrices_triangle.svg" alt="">
+			<span class="caption">Médiatrices d'un triangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="mediatrices_triangle.html"><i class="fas fa-chevron-circle-right"></i></a> Construire les médiatrices d'un triangle.
+		</div>
+  </article>     
+  
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/mediatrice_cote.html" data-featherlight-variant="fig9" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_mediatrice_cote.svg" alt="">
+			<span class="caption">Médiatrice d'un côté d'un triangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="mediatrice_cote.html"><i class="fas fa-chevron-circle-right"></i></a> Construire la médiatrice d'un côté d'un triangle en utilisant uniquement une règle graduée 
+		</div>
+  </article>    
+
+   <article>
+	<div class="vignette">
+		<a href="figiep/mediatrice_triangle_equerre.html" data-featherlight-variant="fig12" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_mediatrice_triangle_equerre.svg" alt="">
+			<span class="caption">Médiatrice d'un côté d'un triangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="mediatrice_triangle_equerre.html"><i class="fas fa-chevron-circle-right"></i></a> Construire la médiatrice d'un côté d'un triangle en utilisant uniquement une équerre 
+		</div>
+  </article>    
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/medianes_triangle.html" data-featherlight-variant="fig10" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_medianes_triangle.svg" alt="">
+			<span class="caption">Médianes d'un triangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="medianes_triangle.html"><i class="fas fa-chevron-circle-right"></i></a> Construire les médianes d'un triangle.
+		</div>
+  </article>     
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/medianes_troisieme.html" data-featherlight-variant="fig11" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_medianes_troisieme.svg" alt="">
+			<span class="caption">Troisième médiane d'un triangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="medianes_troisieme.html"><i class="fas fa-chevron-circle-right"></i></a> Construire la troisième médiane d'un triangle en utilisant uniquement une règle non graduée.
+		</div>
+  </article>      
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/hauteurs_triangle.html" data-featherlight-variant="fig13" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_hauteurs_triangle.svg" alt="">
+			<span class="caption">Hauteurs d'un triangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="hauteurs_triangle.html"><i class="fas fa-chevron-circle-right"></i></a> Construire les hauteurs d'un triangle.
+		</div>
+  </article>    
+  
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/bissectrices_triangle.html" data-featherlight-variant="fig14" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/droites_bissectrices_triangle.svg" alt="">
+			<span class="caption">Bissectrices d'un triangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="bissectrices_triangle.html"><i class="fas fa-chevron-circle-right"></i></a> Construire les bissectrices d'un triangle.
+		</div>
+  </article>    
+  
+ 
+
+  
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/copylink.js" type="text/javascript" charset="utf-8"></script>
+</main>
+</body>

@@ -1,0 +1,288 @@
+<!doctype html>
+<head>
+		<title>Constructions animées avec InstrumEnpoche - Triangles</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="images/logo.svg"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />		
+		<link rel="stylesheet" href="assets/css/featherlight.min.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/iep.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/tooltip.css" type="text/css"  />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type="text/css" rel="stylesheet">
+		<script src="assets/js/clipboard.min.js"></script>
+</head>
+
+
+
+<style type="text/css">
+.featherlight-content button {	/* Mise en forme du bouton de fermeture de la lightbox */
+box-shadow: unset;
+height:auto;
+letter-spacing:0px;
+}
+.featherlight-content {		/* Pour éviter l'apparition d'ascenseurs en cas de redimensionnement */
+	border-bottom:0px!important;
+}
+.featherlight .featherlight-content {
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+/* fig1 : figiep/triangle_isocele.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+@media all and (min-aspect-ratio: 750/450)  { /* Hauteur max : 95vh et Largeur = 95 vh * 750/450 = 158vh */
+.fig1 .featherlight-content {				
+		width:158vh;
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 750/450)  { /* Largeur max : 95vw et Hauteur = 95vw * 450/750 */
+.fig1 .featherlight-content {				
+		width:95vw;
+		height:57vw;
+    }	
+}
+/* fig2 : figiep/reproduire_triangle.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+@media all and (min-aspect-ratio: 800/500)  { /* Hauteur max : 95vh et Largeur = 95 vh * 800/500 = 152vh */
+.fig2 .featherlight-content {				
+		width:152vh;
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 800/500)  { /* Largeur max : 95vw et Hauteur = 95vw * 500/800 */
+.fig2 .featherlight-content {				
+		width:95vw;
+		height:59vw;
+    }	
+}
+/* fig3 : figiep/triangle_equilateral.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig3 {
+	--largeur:710 ;
+	--hauteur:440 ;
+}
+@media all and (min-aspect-ratio: 710/440)  { /* Hauteur max : 95vh et Largeur = 95 vh * 710/440 */
+.fig3 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 710/440)  { /* Largeur max : 95vw et Hauteur = 95vw * 710/440 */
+.fig3 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig4 : figiep/triangle_equilateral.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig4 {
+	--largeur:750 ;
+	--hauteur:410 ;
+}
+@media all and (min-aspect-ratio: 750/410)  { /* Hauteur max : 95vh et Largeur = 95 vh * 750/410 */
+.fig4 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 750/410)  { /* Largeur max : 95vw et Hauteur = 95vw * 750/410 */
+.fig4 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig5 : figiep/triangle_rectangle.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig5 {
+	--largeur:790 ;
+	--hauteur:520 ;
+}
+@media all and (min-aspect-ratio: 790/520)  { /* Hauteur max : 95vh et Largeur = 95 vh * 790/520 */
+.fig5 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 790/520)  { /* Largeur max : 95vw et Hauteur = 95vw * 790/520 */
+.fig5 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig6 : figiep/triangle_rectangle_sans_equerre.html 
+			figiep/triangle_deux_cotes_un_angle.html
+			figiep/triangle_deux_cotes_un_angle_adjacent.html
+			figiep/triangle_un_cote_deux_angles.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig6 {
+	--largeur:790 ;
+	--hauteur:500 ;
+}
+@media all and (min-aspect-ratio: 790/500)  { /* Hauteur max : 95vh et Largeur = 95 vh * 790/500 */
+.fig6 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 790/500)  { /* Largeur max : 95vw et Hauteur = 95vw * 790/500 */
+.fig6 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+</style>	
+			
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+</script>
+
+<body>
+
+<div class="titre">
+	Construction animées avec InstrumEnPoche
+</div>
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Accueil</a>
+  <a href="droites.html">Droites</a>
+  <a href="triangles.html" class="active">Triangles</a>
+  <a href="quadrilateres.html">Quadrilatères</a>
+  <a href="angles.html">Angles</a>
+  <a href="transformations.html">Transformations</a>
+  <a href="divers.html">Divers</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<main class="grid">
+
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/reproduire_triangle.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/triangles_reproduire.svg" alt="">
+			<span class="caption">Reproduire un triangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="reproduire_triangle.html"><i class="fas fa-chevron-circle-right"></i></a> Reproduire un triangle à la règle et au compas.
+		</div>
+  </article>  
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/triangle_longueur_cotes.html" data-featherlight-variant="fig4" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/triangles_triangle_longueur_cotes.svg" alt="">
+			<span class="caption">Triangle connaissant trois côtés</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="triangle_longueur_cotes.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un triangle connaissant les longueurs des trois côtés.
+		</div>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/triangle_isocele.html" data-featherlight-variant="fig1" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/triangles_isocele.svg" alt="">
+			<span class="caption">Triangle isocèle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="triangle_isocele.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un triangle isocèle.
+		</div>
+  </article>      
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/triangle_equilateral.html" data-featherlight-variant="fig3" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/triangles_triangle_equilateral.svg" alt="">
+			<span class="caption">Triangle équilatéral</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="triangle_equilateral.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un triangle équilatéral.
+		</div>
+  </article>     
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/triangle_rectangle.html" data-featherlight-variant="fig5" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/triangles_triangle_rectangle.svg" alt="">
+			<span class="caption">Triangle rectangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="triangle_rectangle.html"><i class="fas fa-chevron-circle-right"></i></a> Triangle rectangle connaissant la longueur du plus grand côté.
+		</div>
+  </article>    
+  
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/triangle_rectangle_sans_equerre.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/triangles_triangle_rectangle_sans_equerre.svg" alt="">
+			<span class="caption">Triangle rectangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="triangle_rectangle_sans_equerre.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un triangle rectangle sans équerre.
+		</div>
+  </article>   
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/triangle_deux_cotes_un_angle.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/triangles_triangle_deux_cotes_un_angle.svg" alt="">
+			<span class="caption">Triangle : deux côtés et un angle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="triangle_deux_cotes_un_angle.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un triangle connaissant les longueurs de deux côtés et la mesure d'un angle.
+		</div>
+  </article>     
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/triangle_deux_cotes_un_angle_adjacent.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/triangles_triangle_deux_cotes_un_angle_adjacent.svg" alt="">
+			<span class="caption">Triangle : deux côtés et un angle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="triangle_deux_cotes_un_angle_adjacent.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un triangle connaissant les longueurs de deux côtés et la mesure de l'angle adjacent à ces côtés.
+		</div>
+  </article>       
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/triangle_un_cote_deux_angles.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/triangles_triangle_un_cote_deux_angles.svg" alt="">
+			<span class="caption">Triangle : un côté et deux angles</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="triangle_un_cote_deux_angles.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un triangle connaissant la longueurs d'un côté et la mesure de deux angles adjacents à ce côté.
+		</div>
+  </article>       
+  
+ 
+
+  
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/copylink.js" type="text/javascript" charset="utf-8"></script>
+</main>
+</body>

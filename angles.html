@@ -1,0 +1,207 @@
+<!doctype html>
+<head>
+		<title>Constructions animées avec InstrumEnpoche - Angles</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="images/logo.svg"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />		
+		<link rel="stylesheet" href="assets/css/featherlight.min.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/iep.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/tooltip.css" type="text/css"  />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type="text/css" rel="stylesheet">
+		<script src="assets/js/clipboard.min.js"></script>
+</head>
+
+
+
+<style type="text/css">
+.featherlight-content button {	/* Mise en forme du bouton de fermeture de la lightbox */
+box-shadow: unset;
+height:auto;
+letter-spacing:0px;
+}
+.featherlight-content {		/* Pour éviter l'apparition d'ascenseurs en cas de redimensionnement */
+	border-bottom:0px!important;
+}
+.featherlight .featherlight-content {
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+/* fig1 : figiep/reproduire_angle.html */
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+@media all and (min-aspect-ratio: 815/500)  { /* Hauteur max : 95vh et Largeur = 95 vh * 815/500 = 154vh */
+.fig1 .featherlight-content {				
+		width:154vh;
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 815/500)  { /* Largeur max : 95vw et Hauteur = 95vw * 500/815 */
+.fig1 .featherlight-content {				
+		width:95vw;
+		height:58vw;
+    }	
+}
+/* fig2 : figiep/comparer_angles.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig2 {
+	--largeur:750 ;
+	--hauteur:470 ;
+}
+@media all and (min-aspect-ratio: 750/470)  { /* Hauteur max : 95vh et Largeur = 95 vh * 750/470 */
+.fig2 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 750/470)  { /* Largeur max : 95vw et Hauteur = 95vw * 750/470 */
+.fig2 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig3 : figiep/mesurer_angle_01.html
+			figiep/mesurer_angle_02.html
+			figiep/tracer_angle_01.html
+			figiep/tracer_angle_02.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig3 {
+	--largeur:770 ;
+	--hauteur:460 ;
+}
+@media all and (min-aspect-ratio: 770/460)  { /* Hauteur max : 95vh et Largeur = 95 vh * 770/460 */
+.fig3 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 770/460)  { /* Largeur max : 95vw et Hauteur = 95vw * 770/460 */
+.fig3 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+</style>	
+			
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+
+</script>
+
+
+
+<body>
+
+<div class="titre">
+	Construction animées avec InstrumEnPoche
+</div>
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Accueil</a>
+  <a href="droites.html">Droites</a>
+  <a href="triangles.html">Triangles</a>
+  <a href="quadrilateres.html">Quadrilatères</a>
+  <a href="angles.html" class="active">Angles</a>
+  <a href="transformations.html">Transformations</a>
+  <a href="divers.html">Divers</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<main class="grid">
+  <article>
+	<div class="vignette">
+		<a href="figiep/reproduire_angle.html" data-featherlight-variant="fig1" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/angles_reproduire.svg" alt="">
+			<span class="caption">Reproduire un angle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="reproduire_angle.html"><i class="fas fa-chevron-circle-right"></i></a> Reproduire un angle à l'aide du compas et d'une règle non graduée.
+		</div>
+  </article>
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/comparer_angles.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/angles_comparer_angles.svg" alt="">
+			<span class="caption">Comparer deux angles</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="comparer_angles.html"><i class="fas fa-chevron-circle-right"></i></a> Comparer deux angles à l'aide du compas.
+		</div>
+  </article>  
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/mesurer_angle_01.html" data-featherlight-variant="fig3" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/angles_mesurer_angle_01.svg" alt="">
+			<span class="caption">Mesurer un angle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="mesurer_angle_01.html"><i class="fas fa-chevron-circle-right"></i></a> Mesurer un angle à l'aide d'un rapporteur.
+		</div>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/mesurer_angle_02.html" data-featherlight-variant="fig3" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/angles_mesurer_angle_02.svg" alt="">
+			<span class="caption">Mesurer un angle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="mesurer_angle_02.html"><i class="fas fa-chevron-circle-right"></i></a> Mesurer un angle à l'aide d'un rapporteur.
+		</div>
+  </article>      
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/tracer_angle_01.html" data-featherlight-variant="fig3" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/angles_tracer_angle_01.svg" alt="">
+			<span class="caption">Construire un angle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="tracer_angle_01.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un angle à l'aide d'un rapporteur.
+		</div>
+  </article>     
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/tracer_angle_02.html" data-featherlight-variant="fig3" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/angles_tracer_angle_02.svg" alt="">
+			<span class="caption">Construire un angle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="tracer_angle_02.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un angle à l'aide d'un rapporteur.
+		</div>
+  </article>    
+ 
+ 
+  
+
+  
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/copylink.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+</main>
+</body>

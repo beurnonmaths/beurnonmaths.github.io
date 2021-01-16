@@ -1,0 +1,285 @@
+<!doctype html>
+<head>
+		<title>Constructions animées avec InstrumEnpoche - Divers</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="images/logo.svg"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />		
+		<link rel="stylesheet" href="assets/css/featherlight.min.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/iep.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/tooltip.css" type="text/css"  />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type="text/css" rel="stylesheet">
+		<script src="assets/js/clipboard.min.js"></script>
+</head>
+
+
+
+<style type="text/css">
+.featherlight-content button {	/* Mise en forme du bouton de fermeture de la lightbox */
+box-shadow: unset;
+height:auto;
+letter-spacing:0px;
+}
+.featherlight-content {		/* Pour éviter l'apparition d'ascenseurs en cas de redimensionnement */
+	border-bottom:0px!important;
+}
+.featherlight .featherlight-content {
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+/* fig1 : figiep/triangle_isocele.html */
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig1 {
+	--largeur:850 ;
+	--hauteur:500 ;
+}
+@media all and (min-aspect-ratio: 850/500)  { /* Hauteur max : 95vh et Largeur = 95 vh * 850/500 = 161vh */
+.fig1 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 850/500)  { /* Largeur max : 95vw et Hauteur = 95vw * 500/850 */
+.fig1 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig2 : figiep/symetrie_axiale_equerre.html */
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig2 {
+	--largeur:820 ;
+	--hauteur:550 ;
+}
+@media all and (min-aspect-ratio: 820/550)  { /* Hauteur max : 95vh et Largeur = 95 vh * 820/550 */
+.fig2 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 820/550)  { /* Largeur max : 95vw et Hauteur = 95vw * 550/820 */
+.fig2 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig3 : figiep/symetrie_axiale_compas.html */
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig3 {
+	--largeur:830 ;
+	--hauteur:500 ;
+}
+@media all and (min-aspect-ratio: 830/500)  { /* Hauteur max : 95vh et Largeur = 95 vh * 830/500  */
+.fig3 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 830/500)  { /* Largeur max : 95vw et Hauteur = 95vw * 500/830 */
+.fig3 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig4 : figiep/symetrie_axiale_compas_meme_ecartement.html */
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig4 {
+	--largeur:840 ;
+	--hauteur:520 ;
+}
+@media all and (min-aspect-ratio: 840/520)  { /* Hauteur max : 95vh et Largeur = 95 vh * 840/520  */
+.fig4 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 840/520)  { /* Largeur max : 95vw et Hauteur = 95vw * 520/840 */
+.fig4 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig5 : figiep/symetrie_centrale.html */
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig5 {
+	--largeur:780 ;
+	--hauteur:500 ;
+}
+@media all and (min-aspect-ratio: 780/500)  { /* Hauteur max : 95vh et Largeur = 95 vh * 780/500  */
+.fig5 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 780/500)  { /* Largeur max : 95vw et Hauteur = 95vw * 780/500 */
+.fig5 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig6 : figiep/translation_compas.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig6 {
+	--largeur:770 ;
+	--hauteur:460 ;
+}
+@media all and (min-aspect-ratio: 770/460)  { /* Hauteur max : 95vh et Largeur = 95 vh * 770/460 */
+.fig6 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 770/460)  { /* Largeur max : 95vw et Hauteur = 95vw * 770/460 */
+.fig6 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig7 : figiep/rotation.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig7 {
+	--largeur:800 ;
+	--hauteur:460 ;
+}
+@media all and (min-aspect-ratio: 800/460)  { /* Hauteur max : 95vh et Largeur = 95 vh * 800/460 */
+.fig7 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 800/460)  { /* Largeur max : 95vw et Hauteur = 95vw * 800/460 */
+.fig7 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+</style>	
+			
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+
+</script>
+
+<body>
+
+<div class="titre">
+	Construction animées avec InstrumEnPoche
+</div>
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Accueil</a>
+  <a href="droites.html">Droites</a>
+  <a href="triangles.html">Triangles</a>
+  <a href="quadrilateres.html">Quadrilatères</a>
+  <a href="angles.html">Angles</a>
+  <a href="transformations.html" class="active">Transformations</a>
+  <a href="divers.html">Divers</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<main class="grid">
+  <article>
+	<div class="vignette">
+		<a href="figiep/symetrie_axiale_equerre.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/transformations_symetrie_axiale_equerre.svg" alt="">
+			<span class="caption">Symétrie axiale (équerre)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="symetrie_axiale_equerre.html"><i class="fas fa-chevron-circle-right"></i></a> Construire le symétrique d'un point par rapport à une droite en utilisant l'équerre.
+		</div>
+  </article>
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/symetrie_axiale_compas.html" data-featherlight-variant="fig3" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/transformations_symetrie_axiale_compas.svg" alt="">
+			<span class="caption">Symétrie axiale (compas)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="symetrie_axiale_compas.html"><i class="fas fa-chevron-circle-right"></i></a> Construire le symétrique d'un point par rapport à une droite en utilisant le compas.
+		</div>
+  </article>  
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/symetrie_axiale_compas_meme_ecartement.html" data-featherlight-variant="fig4" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/transformations_symetrie_axiale_compas_meme_ecartement.svg" alt="">
+			<span class="caption">Symétrie axiale (compas)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="symetrie_axiale_compas_meme_ecartement.html"><i class="fas fa-chevron-circle-right"></i></a> Symétrie axiale au compas et en gardant le même écartement.
+		</div>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/symetrie_centrale.html" data-featherlight-variant="fig5" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">		
+			<img src="images/transformations_symetrie_centrale.svg" alt="">
+			<span class="caption">Symétrie centrale</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="symetrie_centrale.html"><i class="fas fa-chevron-circle-right"></i></a> Construire le symétrique d'un point par rapport à un autre point.
+		</div>
+  </article>      
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/translation.html" data-featherlight-variant="fig1" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/transformations_translation.svg" alt="">
+			<span class="caption">Translation</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="translation.html"><i class="fas fa-chevron-circle-right"></i></a> Construire l'image d'un point par une translation.
+		</div>
+  </article>     
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/translation_compas.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/transformations_translation_compas.svg" alt="">
+			<span class="caption">Translation</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="translation_compas.html"><i class="fas fa-chevron-circle-right"></i></a> Construire l'image d'un point par une translation à l'aide uniquement du compas.
+		</div>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/rotation.html" data-featherlight-variant="fig7" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/transformations_rotation.svg" alt="">
+			<span class="caption">Rotation</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="rotation.html"><i class="fas fa-chevron-circle-right"></i></a> Construire l'image d'un point par une rotation.
+		</div>
+  </article>     
+  
+
+  
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/copylink.js" type="text/javascript" charset="utf-8"></script>
+</main>
+</body>

@@ -1,12 +1,162 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <title>Inscrire un titre ici</title>
-    <!-- On peut avoir d'autres méta-données ici -->
-  </head>
-  <body>
-    <!-- Ici, on placera tout le contenu à destination
-    de l'utilisateur -->
-  </body>
-</html>
+<!doctype html>
+<head>
+		<title>Constructions animées avec InstrumEnpoche</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="images/logo.svg"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />		
+		<link rel="stylesheet" href="assets/css/featherlight.min.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/iep.css" type="text/css"  />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type="text/css" rel="stylesheet">
+</head>
+
+
+<style type="text/css">
+header h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+
+header a:visited {  
+  color: black;
+}
+
+header a:hover {  
+  color: #FF0066;
+  /*font-weight: bold;  */
+}
+
+header a {
+	 text-decoration: none;
+	 font-weight:bold;
+}
+
+article h2 {
+	text-align: center;
+	color:#5c5c5e;
+}
+
+.grid {  
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ }
+ 
+.grid > article img {
+	width:100%;
+	background:none;
+}
+
+
+
+.vignette:hover img, .vignette:focus img {
+    transform: scale(1.1) rotate(-30deg);
+
+</style>
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+</script>
+
+<body>
+
+<div class="titre">
+	Construction animées avec InstrumEnPoche
+</div>
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Accueil</a>
+  <a href="droites.html">Droites</a>
+  <a href="triangles.html">Triangles</a>
+  <a href="quadrilateres.html">Quadrilatères</a>
+  <a href="angles.html">Angles</a>
+  <a href="transformations.html">Transformations</a>
+  <a href="divers.html">Divers</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<header>
+	<h1>Constructions géométriques regroupées par catégories</h1>
+	<p>Ces constructions sont animées et ont été réalisées à l'aide du logiciel <a href="https://instrumenpoche.sesamath.net/" target="_blank">InstrumEnPoche</a>.</p>
+	<p>il est nécessaire d'utiliser un navigateur récent (avec Javascript autorisé) pour visualiser correctement les animations proposées.</p>
+</header>
+
+<main class="grid">
+
+  
+  <article>
+	<div class="vignette">
+		<a href="droites.html">
+			<img src="images/droites.svg" alt="">
+			<span class="caption">Droites</span>
+		</a>
+	</div>
+	<h2>Droites</h2>
+  </article>  
+  
+  <article>
+	<div class="vignette">
+		<a href="triangles.html">
+			<img src="images/triangles.svg" alt="">
+			<span class="caption">Triangles</span>
+		</a>
+	</div>
+	<h2>Triangles</h2>
+  </article>  
+  
+  
+  <article>
+	<div class="vignette">
+		<a href="quadrilateres.html">
+			<img src="images/quadrilateres.svg" alt="">
+			<span class="caption">Quadrilatères</span>
+		</a>
+	</div>
+	<h2>Quadrilatères</h2>
+  </article>  
+  
+  
+  <article>
+	<div class="vignette">
+		<a href="angles.html">
+			<img src="images/angles.svg" alt="">
+			<span class="caption">Angles</span>
+		</a>
+	</div>
+	<h2>Angles</h2>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="transformations.html">
+			<img src="images/transformations.svg" alt="">
+			<span class="caption">Transformations</span>
+		</a>
+	</div>
+	<h2>Transformations</h2>
+  </article>    
+ 
+ 
+  <article>
+	<div class="vignette">
+		<a href="divers.html">
+			<img src="images/divers.svg" alt="">
+			<span class="caption">Divers</span>
+		</a>
+	</div>
+	<h2>Divers</h2>
+  </article>   
+
+  
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+</main>
+</body>

@@ -1,0 +1,284 @@
+<!doctype html>
+<head>
+		<title>Constructions animées avec InstrumEnpoche - Quadrilatères</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="images/logo.svg"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />		
+		<link rel="stylesheet" href="assets/css/featherlight.min.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/iep.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/tooltip.css" type="text/css"  />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type="text/css" rel="stylesheet">
+		<script src="assets/js/clipboard.min.js"></script>
+</head>
+
+
+
+<style type="text/css">
+.featherlight-content button {	/* Mise en forme du bouton de fermeture de la lightbox */
+box-shadow: unset;
+height:auto;
+letter-spacing:0px;
+}
+.featherlight-content {		/* Pour éviter l'apparition d'ascenseurs en cas de redimensionnement */
+	border-bottom:0px!important;
+}
+.featherlight .featherlight-content {
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+/* fig1 : figiep/trapeze.html */
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+@media all and (min-aspect-ratio: 810/450)  { /* Hauteur max : 95vh et Largeur = 95 vh * 810/450 = 171vh */
+.fig1 .featherlight-content {				
+		width:171vh;
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 810/450)  { /* Largeur max : 95vw et Hauteur = 95vw * 450/810 */
+.fig1 .featherlight-content {				
+		width:95vw;
+		height:52vw;
+    }	
+}
+/* fig2 : figiep/parallelogramme_diagonales.html 
+			figiep/losange_regle_compas.html
+			figiep/losange_diagonales.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig2 {
+	--largeur:790 ;
+	--hauteur:470 ;
+}
+@media all and (min-aspect-ratio: 790/470)  { /* Hauteur max : 95vh et Largeur = 95 vh * 790/470 */
+.fig2 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 790/470)  { /* Largeur max : 95vw et Hauteur = 95vw * 790/470 */
+.fig2 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig6 : figiep/parallelogramme_regle_equerre.html
+			figiep/parallelogramme_regle_compas.html
+			figiep/cerf_volant_01.html
+			figiep/cerf_volant_02.html
+			figiep/rectangle_equerre.html
+			figiep/rectangle_diagonales.html
+			figiep/carre.html
+			figiep/carre_diagonales.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig6 {
+	--largeur:790 ;
+	--hauteur:500 ;
+}
+@media all and (min-aspect-ratio: 790/500)  { /* Hauteur max : 95vh et Largeur = 95 vh * 790/500 */
+.fig6 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 790/500)  { /* Largeur max : 95vw et Hauteur = 95vw * 790/500 */
+.fig6 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+</style>	
+			
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+</script>
+
+<body>
+
+<div class="titre">
+	Construction animées avec InstrumEnPoche
+</div>
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Accueil</a>
+  <a href="droites.html">Droites</a>
+  <a href="triangles.html">Triangles</a>
+  <a href="quadrilateres.html" class="active">Quadrilatères</a>
+  <a href="angles.html">Angles</a>
+  <a href="transformations.html">Transformations</a>
+  <a href="divers.html">Divers</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<main class="grid">
+
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/trapeze.html" data-featherlight-variant="fig1" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_trapeze.svg" alt="">
+			<span class="caption">Trapèze</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="trapeze.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un trapèze connaissant les longueurs des deux bases.
+		</div>
+  </article>  
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/parallelogramme_regle_equerre.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_parallelogramme_regle_equerre.svg" alt="">
+			<span class="caption">Parallélogramme (règle & équerre)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="parallelogramme_regle_equerre.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un parallélogramme à la règle et à l'équerre.
+		</div>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/parallelogramme_regle_compas.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_parallelogramme_regle_compas.svg" alt="">
+			<span class="caption">Parallélogramme (règle & compas)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="parallelogramme_regle_compas.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un parallélogramme à la règle et au compas.
+		</div>
+  </article>      
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/parallelogramme_diagonales.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_parallelogramme_diagonales.svg" alt="">
+			<span class="caption">Parallélogramme (diagonales)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="parallelogramme_diagonales.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un parallélogramme connaissant la longueur de ses diagonales.
+		</div>
+  </article>     
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/losange_regle_compas.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_losange_regle_compas.svg" alt="">
+			<span class="caption">Losange (règle & compas)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="losange_regle_compas.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un losange à la règle et au compas.
+		</div>
+  </article>    
+  
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/losange_diagonales.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_losange_diagonales.svg" alt="">
+			<span class="caption">Losange (diagonales)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="losange_diagonales.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un losange connaissant la longueur de ses diagonales.
+		</div>
+  </article>   
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/cerf_volant_01.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_cerf_volant_01.svg" alt="">
+			<span class="caption">Cerf-volant</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="cerf_volant_01.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un cerf-volant connaissant deux côtés consécutifs de longueurs différentes.
+		</div>
+  </article>     
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/cerf_volant_02.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_cerf_volant_02.svg" alt="">
+			<span class="caption">Cerf-volant</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="cerf_volant_02.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un cerf-volant connaissant deux côtés consécutifs de longueurs différentes.
+		</div>
+  </article>       
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/rectangle_equerre.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_rectangle_equerre.svg" alt="">
+			<span class="caption">Rectangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="rectangle_equerre.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un rectangle avec l'équerre.
+		</div>
+  </article>       
+  
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/rectangle_diagonales.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_rectangle_diagonales.svg" alt="">
+			<span class="caption">Rectangle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="rectangle_diagonales.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un rectangle connaissant la longueur d'une diagonale.
+		</div>
+  </article>     
+  
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/carre.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_carre.svg" alt="">
+			<span class="caption">Carré</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="carre.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un carré connaissant la longueur d'un côté.
+		</div>
+  </article>      
+  
+   <article>
+	<div class="vignette">
+		<a href="figiep/carre_diagonales.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/quadrilateres_carre_diagonales.svg" alt="">
+			<span class="caption">Carré</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="carre_diagonales.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un carré connaissant la longueur d'une diagonale.
+		</div>
+  </article>      
+ 
+ 
+  
+
+  
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/copylink.js" type="text/javascript" charset="utf-8"></script>
+</main>
+</body>

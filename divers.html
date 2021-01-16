@@ -1,0 +1,418 @@
+<!doctype html>
+<head>
+		<title>Constructions animées avec InstrumEnpoche - Divers</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="images/logo.svg"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />		
+		<link rel="stylesheet" href="assets/css/featherlight.min.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/iep.css" type="text/css"  />
+		<link rel="stylesheet" href="assets/css/tooltip.css" type="text/css"  />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type="text/css" rel="stylesheet">
+		<script src="assets/js/clipboard.min.js"></script>
+</head>
+
+
+
+<style type="text/css">
+.featherlight-content button {	/* Mise en forme du bouton de fermeture de la lightbox */
+box-shadow: unset;
+height:auto;
+letter-spacing:0px;
+}
+.featherlight-content {		/* Pour éviter l'apparition d'ascenseurs en cas de redimensionnement */
+	border-bottom:0px!important;
+}
+.featherlight .featherlight-content {
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+/* fig1 : figiep/reproduire_arc.html 
+			figiep/partager_segment.html 
+*/
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig1 {
+	--largeur:800 ;
+	--hauteur:540 ;
+}
+@media all and (min-aspect-ratio: 800/540)  { /* Hauteur max : 95vh et Largeur = 95 vh * 800/540 */
+.fig1 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 800/540)  { /* Largeur max : 95vw et Hauteur = 95vw * 540/800 */
+.fig1 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig2 : figiep/comparer_longueurs.html */
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig2 {
+	--largeur:700 ;
+	--hauteur:460 ;
+}
+@media all and (min-aspect-ratio: 700/460)  { /* Hauteur max : 95vh et Largeur = 95 vh * 700/460 */
+.fig2 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 700/460)  { /* Largeur max : 95vw et Hauteur = 95vw * 460/700 */
+.fig2 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig3 : figiep/mesurer_perimetre.html */
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig3 {
+	--largeur:650 ;
+	--hauteur:460 ;
+}
+@media all and (min-aspect-ratio: 650/460)  { /* Hauteur max : 95vh et Largeur = 95 vh * 650/460 */
+.fig3 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 650/460)  { /* Largeur max : 95vw et Hauteur = 95vw * 460/650 */
+.fig3 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig4 : figiep/rosace.html */
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig4 {
+	--largeur:580 ;
+	--hauteur:580 ;
+}
+@media all and (min-aspect-ratio: 580/580)  { /* Hauteur max : 95vh et Largeur = 95 vh * 580/580 */
+.fig4 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 580/580)  { /* Largeur max : 95vw et Hauteur = 95vw * 580/580 */
+.fig4 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig5 : figiep/pentagone_regulier.html 
+			figiep/hexagone_regulier.html
+*/
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig5 {
+	--largeur:750 ;
+	--hauteur:550 ;
+}
+@media all and (min-aspect-ratio: 750/550)  { /* Hauteur max : 95vh et Largeur = 95 vh * 750/550 */
+.fig5 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 750/550)  { /* Largeur max : 95vw et Hauteur = 95vw * 550/750 */
+.fig5 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig6 : figiep/pave_droit.html 			
+*/
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig6 {
+	--largeur:700 ;
+	--hauteur:540 ;
+}
+@media all and (min-aspect-ratio: 700/540)  { /* Hauteur max : 95vh et Largeur = 95 vh * 700/540 */
+.fig6 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 700/540)  { /* Largeur max : 95vw et Hauteur = 95vw * 540/700 */
+.fig6 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig7 : figiep/fonction_image.html 			
+*/
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig7 {
+	--largeur:820 ;
+	--hauteur:540 ;
+}
+@media all and (min-aspect-ratio: 820/540)  { /* Hauteur max : 95vh et Largeur = 95 vh * 820/540 */
+.fig7 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 820/540)  { /* Largeur max : 95vw et Hauteur = 95vw * 540/820 */
+.fig7 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig8 : figiep/fonction_antecedent.html 	
+			figiep/fonction_courbe.html 
+*/
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig8 {
+	--largeur:810 ;
+	--hauteur:510 ;
+}
+@media all and (min-aspect-ratio: 810/510)  { /* Hauteur max : 95vh et Largeur = 95 vh * 810/510 */
+.fig8 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 810/510)  { /* Largeur max : 95vw et Hauteur = 95vw * 510/810 */
+.fig8 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig9 : figiep/fonction_lineaire.html 				
+*/
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig9 {
+	--largeur:790 ;
+	--hauteur:540 ;
+}
+@media all and (min-aspect-ratio: 790/540)  { /* Hauteur max : 95vh et Largeur = 95 vh * 790/540 */
+.fig9 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 790/540)  { /* Largeur max : 95vw et Hauteur = 95vw * 540/790 */
+.fig9 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig10 : figiep/fonction_affine.html 				
+*/
+/* En fonction du ration larger/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig10 {
+	--largeur:780 ;
+	--hauteur:500 ;
+}
+@media all and (min-aspect-ratio: 780/500)  { /* Hauteur max : 95vh et Largeur = 95 vh * 780/500 */
+.fig10 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 780/500)  { /* Largeur max : 95vw et Hauteur = 95vw * 500/790 */
+.fig10 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+</style>	
+			
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+</script>
+
+<body>
+
+<div class="titre">
+	Construction animées avec InstrumEnPoche
+</div>
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Accueil</a>
+  <a href="droites.html">Droites</a>
+  <a href="triangles.html">Triangles</a>
+  <a href="quadrilateres.html">Quadrilatères</a>
+  <a href="angles.html">Angles</a>
+  <a href="transformations.html">Transformations</a>
+  <a href="divers.html" class="active">Divers</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<main class="grid">
+  <article>
+	<div class="vignette">
+		<a href="figiep/reproduire_arc.html" data-featherlight-variant="fig1" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_reproduire_arc.svg" alt="">
+			<span class="caption">Reproduire un arc de cercle</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="reproduire_arc.html"><i class="fas fa-chevron-circle-right"></i></a> Reproduire un arc de cercle.
+		</div>
+  </article>
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/comparer_longueurs.html" data-featherlight-variant="fig2" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_comparer_longueurs.svg" alt="">
+			<span class="caption">Comparer des longueurs</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="comparer_longueurs.html"><i class="fas fa-chevron-circle-right"></i></a> Comparer des longueurs de segments à l'aide d'un compas.
+		</div>
+  </article>  
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/mesurer_perimetre.html" data-featherlight-variant="fig3" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_mesurer_perimetre.svg" alt="">
+			<span class="caption">Mesurer un périmètre</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="mesurer_perimetre.html"><i class="fas fa-chevron-circle-right"></i></a> Mesurer le périmètre d'un polygone en une seule fois.
+		</div>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/rosace.html" data-featherlight-variant="fig4" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_rosace.svg" alt="">
+			<span class="caption">Rosace</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="rosace.html"><i class="fas fa-chevron-circle-right"></i></a> Construire une rosace.
+		</div>
+  </article>      
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/pentagone_regulier.html" data-featherlight-variant="fig5" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_pentagone_regulier.svg" alt="">
+			<span class="caption">Pentagone régulier</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="pentagone_regulier.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un pentagone régulier.
+		</div>
+  </article>     
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/hexagone_regulier.html" data-featherlight-variant="fig5" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_hexagone_regulier.svg" alt="">
+			<span class="caption">Hexagone régulier</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="hexagone_regulier.html"><i class="fas fa-chevron-circle-right"></i></a> Construire un hexagone régulier.
+		</div>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/partager_segment.html" data-featherlight-variant="fig1" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_partager_segment.svg" alt="">
+			<span class="caption">Partager un sgment</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="partager_segment.html"><i class="fas fa-chevron-circle-right"></i></a> Partager, en parts égales, un segment à la règle non graduée et au compas.
+		</div>
+  </article>     
+  
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/pave_droit.html" data-featherlight-variant="fig6" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_pave_droit.svg" alt="">
+			<span class="caption">Pavé droit</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="pave_droit.html"><i class="fas fa-chevron-circle-right"></i></a> Représenter un pavé droit en perspective cavalière.
+		</div>
+  </article>   
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/fonction_image.html" data-featherlight-variant="fig7" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_fonction_image.svg" alt="">
+			<span class="caption">Image d'un nombre</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="fonction_image.html"><i class="fas fa-chevron-circle-right"></i></a> Déterminer graphiquement l'image d'un nombre par une fonction.
+		</div>
+  </article>     
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/fonction_antecedent.html" data-featherlight-variant="fig8" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_fonction_antecedent.svg" alt="">
+			<span class="caption">Antécédent(s) d'un nombre</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="fonction_antecedent.html"><i class="fas fa-chevron-circle-right"></i></a> Déterminer graphiquement le (ou les) antécédent(s) d'un nombre par une fonction (s'ils existent).
+		</div>
+  </article>      
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/fonction_courbe.html" data-featherlight-variant="fig8" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_fonction_courbe.svg" alt="">
+			<span class="caption">Courbe représentative</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="fonction_courbe.html"><i class="fas fa-chevron-circle-right"></i></a> Tracer la représentation graphique d'une fonction.
+		</div>
+  </article>   
+  
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/fonction_lineaire.html" data-featherlight-variant="fig9" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_fonction_lineaire.svg" alt="">
+			<span class="caption">Fonction linéaire</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="fonction_lineaire.html"><i class="fas fa-chevron-circle-right"></i></a> Tracer la représentation graphique d'une fonction linéaire.
+		</div>
+  </article>
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/fonction_affine.html" data-featherlight-variant="fig10" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/divers_fonction_affine.svg" alt="">
+			<span class="caption">Fonction affine</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a  class="mylink" data-link="fonction_affine.html"><i class="fas fa-chevron-circle-right"></i></a> Tracer la représentation graphique d'une fonction affine.
+		</div>
+  </article>  
+  
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/copylink.js" type="text/javascript" charset="utf-8"></script>
+</main>
+</body>
