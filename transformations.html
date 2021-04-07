@@ -154,6 +154,63 @@ letter-spacing:0px;
 		height:calc(95vw * var(--hauteur) / var(--largeur) );		
     }	
 }
+/* fig8 : figiep/homothetie_agrandissement.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig8 {
+	--largeur:760 ;
+	--hauteur:430 ;
+}
+@media all and (min-aspect-ratio: 760/430)  { /* Hauteur max : 95vh et Largeur = 95 vh * 760/430 */
+.fig8 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 760/430)  { /* Largeur max : 95vw et Hauteur = 95vw * 760/430 */
+.fig8 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig9 : figiep/homothetie_reduction.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig9 {
+	--largeur:760 ;
+	--hauteur:460 ;
+}
+@media all and (min-aspect-ratio: 760/460)  { /* Hauteur max : 95vh et Largeur = 95 vh * 760/460 */
+.fig9 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 760/460)  { /* Largeur max : 95vw et Hauteur = 95vw * 760/460 */
+.fig9 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
+/* fig10 : figiep/homothetie_rapport_negatif.html
+*/
+/* En fonction du ratio largeur/hauteur du svg, on donne les dimensions maximales de la lightbox */
+.fig10 {
+	--largeur:760 ;
+	--hauteur:490 ;
+}
+@media all and (min-aspect-ratio: 760/490)  { /* Hauteur max : 95vh et Largeur = 95 vh * 760/490 */
+.fig10 .featherlight-content {				
+		width:calc(95vh * var(--largeur) / var(--hauteur) );
+		height:95vh;
+    }	
+}
+@media all and (max-aspect-ratio: 760/490)  { /* Largeur max : 95vw et Hauteur = 95vw * 760/490 */
+.fig10 .featherlight-content {				
+		width:95vw;
+		height:calc(95vw * var(--hauteur) / var(--largeur) );		
+    }	
+}
 </style>	
 			
 
@@ -273,6 +330,42 @@ function myFunction() {
 	</div>
 		<div class="text">
 		  <a class="mylink" data-link="rotation.html"><i class="fas fa-chevron-circle-right"></i></a> Construire l'image d'un point par une rotation.
+		</div>
+  </article>    
+
+  <article>
+	<div class="vignette">
+		<a href="figiep/homothetie_agrandissement.html" data-featherlight-variant="fig8" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/homothetie_agrandissement.svg" alt="">
+			<span class="caption">Homothétie (agrandissement)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="homothetie_agrandissement.html"><i class="fas fa-chevron-circle-right"></i></a> Construire l'image d'un triangle par une homothétie.
+		</div>
+  </article>     
+
+  <article>
+	<div class="vignette">
+		<a href="figiep/homothetie_reduction.html" data-featherlight-variant="fig9" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/homothetie_reduction.svg" alt="">
+			<span class="caption">Homothétie (réduction)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="homothetie_reduction.html"><i class="fas fa-chevron-circle-right"></i></a> Construire l'image d'un triangle par une homothétie.
+		</div>
+  </article>    
+  
+  <article>
+	<div class="vignette">
+		<a href="figiep/homothetie_rapport_negatif.html" data-featherlight-variant="fig10" data-featherlight="iframe" data-featherlight-iframe-style="width:100%;height:100%;">
+			<img src="images/homothetie_rapport_negatif.svg" alt="">
+			<span class="caption">Homothétie (rapport négatif)</span>
+		</a>
+	</div>
+		<div class="text">
+		  <a class="mylink" data-link="homothetie_rapport_negatif.html"><i class="fas fa-chevron-circle-right"></i></a> Construire l'image d'un triangle par une homothétie.
 		</div>
   </article>     
   
